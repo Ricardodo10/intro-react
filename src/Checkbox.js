@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 
-export default function Checkbox() {
-    const initialTodos = ["My first todo", "My second todo"];
-    const [todos, setTodos] = useState(initialTodos);
-    const [checked, setChecked] = React.useState(true);
+
+export default function Checkbox(props) {
+    const [checked, setChecked] = useState(true);
+
     return (
         <ul>
-            {todos.map((todo, index) => (
+            {props.todos.map((todo, index) => (
                 <li key={index}>
                     <input type="checkbox" 
                     defaultChecked={!checked}

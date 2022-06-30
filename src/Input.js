@@ -1,9 +1,17 @@
-import React from 'react'
+import React , {useRef} from 'react'
 
-export default function Input() {
+export default function Input(props) {
+  const inputRef = useRef();
+  function clickHandler(){
+    const inputElement = inputRef.current;
+    console.log(inputElement.value);
+
+  }
   return (
     <div>
-      <input type="text" />
-    </div>
+    <input ref={inputRef} type="text" placeholder="Write a new todo" />
+    <br />
+    <button onClick={clickHandler}>Add todo</button>
+  </div>
   )
 }
