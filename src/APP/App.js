@@ -3,21 +3,28 @@ import Todolist from '../Todolist';
 import Input from '../Input';
 import Buttonclear from '../Buttonclear';
 import Checkbox from '../Checkbox';
-import  { useState } from 'react'
+import  { useState} from 'react'
+import uuidv4 from 'uuid/v4';
 
 function App() {
-  const initialTodos = ["My first todo", "My second todo"];
+  const initialTodos = ([]);
   const [todos,settodos] = useState(initialTodos);
+  settodos(prevtodos =>{
+    return [...prevtodos, {id:1, name: name , complete false
+    }]
+  })
   return (
     <>
       <Todolist />
-      <Input />
+      <Input todos={todos} />
       <Buttonclear />
       <Checkbox todos={todos} />
 
     </>
+  
 
   )
+  
 }
 
 export default App;
